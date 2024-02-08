@@ -1,0 +1,38 @@
+:root{
+  --primary: purple;
+  --secondary: beige;
+}
+
+
+body {
+  margin: 0;
+
+  padding: 20px;
+
+  background: var(--secondary);
+
+}
+
+
+/* Navbar */
+header nav {
+  gap: 15px;
+  justify-content: end;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header nav h1{
+  margin-right: auto;
+  border-bottom: 3px solid var(--primary);
+}
+header nav a{
+  float: right;
+  text-decoration: none;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+header nav a.acttive{
+  background: var(--primary);
+}
