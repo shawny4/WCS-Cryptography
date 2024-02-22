@@ -1,6 +1,7 @@
 import './App.css';
 import {BrowserRouter, Routes, Route, NavLink} from 'react-router-dom';
 import BlockCipher from './Pages/BlockCipher';
+import BlockChainAndRNG from './Pages/BlockChainAndRNG';
 import Duck from './Duck';
 //import duck from './images/quack.png';
 
@@ -13,6 +14,7 @@ function App() {
           <nav>
             <NavLink to ="idkLol"> uhhhhh</NavLink>
             <NavLink to="blockCipher">Block Cipher</NavLink>
+            <NavLink to="otherBlock"> Other Block</NavLink>
             <NavLink to="/">Home</NavLink>
             
             <h1>THIS IS A NAV BAR</h1>
@@ -22,7 +24,7 @@ function App() {
         <main>
         
         <div classname="content">
-          <h1>Hello WOrld</h1>
+          <h1>Hello World</h1>
         
           
           
@@ -30,6 +32,7 @@ function App() {
             <Route path="/"/>
             <Route path="/idkLol" element={<Duck/>}/>
             <Route path="blockCipher" element={<BlockCipher/>} />
+            <Route path="otherBlock" element={<BlockChainAndRNG/>} />
 
           </Routes> 
           
@@ -39,6 +42,10 @@ function App() {
     </BrowserRouter> 
   );
 }
+
+
+
+
 
 /* <header className="App-header">
 <img src={logo} className="App-logo" alt="logo" />
