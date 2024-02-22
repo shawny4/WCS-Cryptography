@@ -30,6 +30,11 @@ function App() {
             <Route path="/"/>
             <Route path="/idkLol" element={<Duck/>}/>
             <Route path="blockCipher" element={<BlockCipher/>} />
+<<<<<<< Updated upstream
+=======
+            <Route path="otherBlock" element={<BlockChainAndRNG/>} />
+            <Route path ="CeasarCipher" element={<CeasarCipher/>} />
+>>>>>>> Stashed changes
 
           </Routes> 
           
