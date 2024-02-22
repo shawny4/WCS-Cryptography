@@ -1,3 +1,6 @@
+
+import { useState } from 'react';
+
 //simple block chain and number generation program
 
 function randomNumGen(n) {
@@ -19,6 +22,8 @@ function randomNumGen(n) {
 
 class Block {
     constructor(message, key) {
+
+        console.log("created");
         this.cText = [];
         this.next = null;
         this.n = message.length;
@@ -100,16 +105,7 @@ class Block {
     }
 }
 
-function sleep(milliseconds) {
-    var start = new Date().getTime();
-    for (var i = 0; i < 1e7; i++) {
-        if ((new Date().getTime() - start) > milliseconds){
-            break;
-        }
-    }
-}
-
-
+/*
 const key = randomNumGen(10);
 sleep(1);
 const secondKey = randomNumGen(100);
@@ -127,18 +123,63 @@ console.log("\nsecond block:\n" + secondBlock.decode(secondKey));
 console.log("\n\nPrinting results with correct key\n");
 console.log("first block:\n" + firstBlock.decode(secondKey));
 console.log("\nsecond block:\n" + secondBlock.decode(key));
+*/
 
-
-//TO BREAK
-    //FIND MODULUS
-        // tn = sn+1 - sn
-        // un = |tn+2 * tn - tn+1 ^ 2|
-        // m = gcd(u1, u2, ..., un) <- where n is arbitary; higher value of n increases success chance
-
-    //FIND A AND B
+const BlockChainAndRNG = () => {
+    const [plaintext, setPt] = useState("");
+    const [key, setKey] = useState("");
+    const [block, setBlock] = useState("");
+    const [inKey, setInKey] = useState("");
+    const [outStr, setOutStr] = useState("");
     
-    //BRUTE FORCE
+    return(
+        <div className = "createBlock">
+            <h1>Dino nuggets</h1>
 
-//function bruteForce(startTime, endTime, block) {
-//    return 0;
-//}
+            {key === "" && <button type="submit" onClick={()=> setKey(randomNumGen(6))}>Generate Key</button>}
+
+            {key !=="" && <p class = "returned_text">Your Key: {key}</p>}
+
+            {key !== "" && block === "" &&
+                <label>
+                    Enter a string: <input 
+                        id="enter" 
+                        defaultValue={""} 
+                        value={plaintext}
+                        onChange={e => setPt(e.target.value)}
+                    />
+
+                    <button 
+                        type="submit"
+                        onClick={()=> setBlock(new Block(plaintext, key))}
+                    > Create New Blockchain </button>
+                </label>
+            }
+
+            {plaintext !=="" && <p class = "returned_text">Entered Plaintext: {plaintext}</p>}
+
+            {block !== "" &&
+                <label>
+                    To decrypt, enter your key: <input 
+                        id="enter" 
+                        defaultValue={""} 
+                        value={inKey}
+                        onChange={e => setInKey(e.target.value)}
+                    />
+
+                    <button 
+                        type="submit"
+                        onClick={()=> {
+                            setOutStr(block.decode(key)); 
+                        }}
+                    > Decrypt Blockchain </button>
+                </label>
+            }
+
+            {outStr !== "" && <p class = "returned_text">Decrypted Text: {outStr}</p>}
+
+        </div>
+    );
+}
+
+export default BlockChainAndRNG;
