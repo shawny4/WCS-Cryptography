@@ -1,6 +1,7 @@
 import './App.css';
 import {BrowserRouter, Routes, Route, NavLink} from 'react-router-dom';
-import BlockCipher from './Pages/BlockCipher';
+import Shawn from './Pages/Shawn-BlockCipher';
+import Vanson from './Pages/Vanson';
 import Duck from './Duck';
 //import duck from './images/quack.png';
 
@@ -12,8 +13,10 @@ function App() {
         <header>
           <nav>
             <NavLink to ="idkLol"> uhhhhh</NavLink>
-            <NavLink to="blockCipher">Block Cipher</NavLink>
+            <NavLink to="Shawn-blockCipher">Shawn Yuen</NavLink>
+            <NavLink to="Vanson-cipher">Vanson</NavLink>
             <NavLink to="/">Home</NavLink>
+
             
             <h1>THIS IS A NAV BAR</h1>
           </nav>
@@ -29,8 +32,8 @@ function App() {
           <Routes>
             <Route path="/"/>
             <Route path="/idkLol" element={<Duck/>}/>
-            <Route path="blockCipher" element={<BlockCipher/>} />
-
+            <Route path="Shawn-blockCipher" element={<Shawn/>} />
+            <Route path="Vanson-cipher" element={<Vanson/>}/>
           </Routes> 
           
         </div>

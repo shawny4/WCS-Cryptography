@@ -1,10 +1,10 @@
-import duck from './images/quack.png';
+import bird from './images/quack.png';
 
 const Duck = () => {
     return(
         <div className = "duck">
             <p>Quack</p>
-            <img src={duck} alt="duck" />
+            <img src={bird} alt="duck" />
         </div>
     );
 }
