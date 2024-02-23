@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import cipher from '../images/Shawn-CBC_Block_Cipher.png';
 
 const BlockCipher = () => {
 
@@ -129,6 +130,9 @@ function scramble(text) {
                 <button type="submit">Submit form</button>
             </label>
             
+
+            <img src={cipher} alt="duck" />
+
             {plaintext !=="" && <p class = "returned_text">Entered Plaintext: {plaintext}</p>}
             
             {plaintext !=="" && <button id="encrypt" onClick={()=>encrypt()}>Encrypt</button>}
