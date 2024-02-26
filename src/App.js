@@ -6,16 +6,17 @@ import Vanson from './Pages/Vanson';
 
 import BlockChainAndRNG from './Pages/BlockChainAndRNG';
 
-import Alex from './Pages/Alex.js'
+import Alex from './Pages/Alex'
 
 import Duck from './Duck';
 
 function App() {
+  
   return (
     <BrowserRouter>
     
       <div className="App"> 
-        <header>
+      <header className="App-header">
           <nav>
             <NavLink to ="idkLol"> uhhhhh</NavLink>
 
@@ -32,14 +33,14 @@ function App() {
             <NavLink to="/">Home</NavLink>
 
             
-            <h1>THIS IS A NAV BAR</h1>
+            
           </nav>
         </header>
         
         <main>
         
-        <div classname="content">
-          <h1>Hello World</h1>
+        <div className="content">
+        <h1>WCS Cryptography Implementation</h1>
         
           
           
