@@ -6,6 +6,7 @@ import Vanson from './Pages/Vanson';
 
 import BlockChainAndRNG from './Pages/BlockChainAndRNG';
 
+import Alex from './Pages/Alex.js'
 
 import Duck from './Duck';
 
@@ -22,9 +23,11 @@ function App() {
 
             <NavLink to="Shawn-blockCipher">Shawn Yuen</NavLink>
             <NavLink to="Vanson-cipher">Vanson</NavLink>
-          
+
            
             <NavLink to="Web-block"> Web</NavLink>
+
+            <NavLink to="Alex-cipher">Alex</NavLink>
 
             <NavLink to="/">Home</NavLink>
 
@@ -49,6 +52,8 @@ function App() {
 
             <Route path="Shawn-blockCipher" element={<Shawn/>} />
             <Route path="Vanson-cipher" element={<Vanson/>}/>
+
+            <Route path="Alex-cipher" element= {<Alex/>}/>
 
           </Routes> 
           
