@@ -1,0 +1,34 @@
+.home-content {
+    text-align: center;
+    padding: 0px;
+    transform: translateY(-2%);
+  }
+  
+  .home-title {
+    color: #ffffff;
+  
+  }
+  
+  .home-line {
+    display: block; /* Each line is displayed on a new row */
+    text-align: center; /* Text is centered */
+    color: #ffffff; /* Text color is white */
+    font-size: 2em; /* Font size is set to 2em, adjust as needed */
+    font-family: 'Raleway', sans-serif; /* Raleway font */
+    /* Adjust the transform values as needed */
+  }
+  
+  .home-line:nth-child(1) {
+    /* Move the first line slightly to the left and up */
+    transform: translateX(-7%);
+  }
+  
+  .home-line:nth-child(2) {
+    /* Center the second line */
+    transform: translateX(3%) translateY(-3%);
+  }
+  
+  .home-line:nth-child(3) {
+    /* Move the third line slightly to the right and up */
+    transform: translateX(3%);
+  }

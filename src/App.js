@@ -1,9 +1,10 @@
 import './App.css';
 import {BrowserRouter, Routes, Route, NavLink} from 'react-router-dom';
-
+import logo from './images/wcs_logo_transparent_background2.png'
 import Shawn from './Pages/Shawn-BlockCipher';
 import Vanson from './Pages/Vanson';
 
+import Home from './Home'; 
 import BlockChainAndRNG from './Pages/BlockChainAndRNG';
 
 import Alex from './Pages/Alex'
@@ -17,6 +18,7 @@ function App() {
     
       <div className="App"> 
       <header className="App-header">
+        <img src={logo} alt="Logo"  className="App-logo"/>
           <nav>
             <NavLink to ="idkLol"> uhhhhh</NavLink>
 
@@ -40,12 +42,14 @@ function App() {
         <main>
         
         <div className="content">
-        <h1>WCS Cryptography Implementation</h1>
+             
         
           
           
           <Routes>
-            <Route path="/"/>
+            
+          <Route path="/" element={<Home />} />
+
             <Route path="/idkLol" element={<Duck/>}/>
           
             <Route path="Web-block" element={<BlockChainAndRNG/>} />
