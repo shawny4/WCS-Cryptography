@@ -4,8 +4,7 @@ import logo from './images/wcs_logo_transparent_background2.png'
 import Shawn from './Pages/Shawn-BlockCipher';
 import Vanson from './Pages/Vanson';
 
-import Home from './Home'; 
-import BlockChainAndRNG from './Pages/BlockChainAndRNG';
+import BlockChainAndRNG from './Pages/Web';
 
 import Alex from './Pages/Alex'
 
