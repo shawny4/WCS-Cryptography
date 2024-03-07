@@ -3,8 +3,8 @@ import {BrowserRouter, Routes, Route, NavLink} from 'react-router-dom';
 import logo from './images/wcs_logo_transparent_background2.png'
 import Shawn from './Pages/Shawn-BlockCipher';
 import Vanson from './Pages/Vanson';
-
 import BlockChainAndRNG from './Pages/Web';
+import Home from './Home'
 
 import Alex from './Pages/Alex'
 
