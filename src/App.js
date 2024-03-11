@@ -5,7 +5,7 @@ import Shawn from './Pages/Shawn-BlockCipher';
 import Vanson from './Pages/Vanson';
 import BlockChainAndRNG from './Pages/Web';
 import Home from './Home'
-import animationData from './wired-gradient-27-globe.json';
+import animationData from './wired-gradient-27-globe (1).json';
 import Lottie from 'react-lottie';
 import Alex from './Pages/Alex'
 
