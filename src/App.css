@@ -5,7 +5,27 @@
   background-repeat: no-repeat;
   min-height: 100vh;
 }
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(65, 65, 65, 0.8); /* Semi-transparent white background */
+  z-index: 1000; /* Higher than everything else */
+}
 
+.is-blurred {
+  filter: blur(8px); /* Adjust blur strength as needed */
+}
+
+/* Add transition for smooth blur effect */
+.App, .App * {
+  transition: filter 1.5s;
+}
 .App-logo {
   width: 230px; /* Increase the width of the logo */
   position: absolute; /* Take it out of the flow to move it freely */
