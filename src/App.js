@@ -22,7 +22,7 @@ function App() {
     }, 4000); // Adjust time as needed
 
     return () => clearTimeout(timer);
-  }, []);
+  }, );
 
   const defaultOptions = {
     loop: true,
@@ -92,7 +92,7 @@ function App() {
           </div>
           </main> 
         </div>
-      )}
+      
       </BrowserRouter> 
   );
 }
