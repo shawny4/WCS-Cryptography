@@ -9,7 +9,7 @@
   
 .input-group, .output-group {
   /* Style your input and output groups */
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  background: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
   border: 1px solid #fff; /* White border */
   margin-bottom: 20px;
   padding: 10px;
