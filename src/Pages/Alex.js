@@ -35,7 +35,7 @@ function BlockCipherDemo() {
   const [showDecryption, setShowDecryption] = useState(false);
 
   const handleEncryptWithRandomKey = () => {
-    const randomKey = generateRandomKey(8);
+    const randomKey = generateRandomKey(16);
     setKey(randomKey);
     setEncrypted(simpleEncrypt(text, randomKey));
     setShowDecryption(true);
