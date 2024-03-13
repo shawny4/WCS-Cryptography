@@ -32,48 +32,66 @@ function BlockCipherDemo() {
   const [key, setKey] = useState('');
   const [encrypted, setEncrypted] = useState('');
   const [decrypted, setDecrypted] = useState('');
-  const [isKeyGenerated, setIsKeyGenerated] = useState(false); // New state to track key generation
+  const [showDecryption, setShowDecryption] = useState(false);
 
-  
+  const handleEncryptWithRandomKey = () => {
+    const randomKey = generateRandomKey(8);
+    setKey(randomKey);
+    setEncrypted(simpleEncrypt(text, randomKey));
+    setShowDecryption(true);
+  };
 
   const handleDecrypt = () => {
     setDecrypted(simpleDecrypt(encrypted, key));
   };
-  const handleEncryptWithRandomKey = () => {
-    const randomKey = generateRandomKey(8); // Generate a key of length 8
-    setKey(randomKey);
-    setEncrypted(simpleEncrypt(text, randomKey));
-    setIsKeyGenerated(true); // Set to true after key is generated
-  };
+
 
   return (
     <div className="block-cipher-demo">
-      <div className="input-group">
-        <input
-          className="text-input"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          placeholder="Text to encrypt"
-        />
-        <input
-          className="key-input"
-          value={key}
-          readOnly={!isKeyGenerated} 
-          placeholder="Encryption key"
-        />
-        <button className="encrypt-button" onClick={handleEncryptWithRandomKey}>
-          Encrypt with Random Key
-        </button>
-        <button className="decrypt-button" onClick={handleDecrypt}>
-          Decrypt
-        </button>
-      </div>
-      <div className="output-group">
-        <label>Encrypted:</label>
-        <textarea className="output-encrypted" value={encrypted} readOnly />
-        <label>Decrypted:</label>
-        <textarea className="output-decrypted" value={decrypted} readOnly />
-      </div>
+      {!showDecryption && (
+        <div className="input-group">
+          <input
+            className="text-input"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            placeholder="Text to encrypt"
+          />
+          <button className="encrypt-button" onClick={handleEncryptWithRandomKey}>
+            Encrypt
+          </button>
+        </div>
+      )}
+      {showDecryption && (
+        <>
+          <div className="output-group">
+            <label>Encryption key:</label>
+            <input
+              className="key-output"
+              value={key}
+              readOnly
+            />
+            <label>Encrypted:</label>
+            <textarea
+              className="output-encrypted"
+              value={encrypted}
+              readOnly
+            />
+            <button className="decrypt-button" onClick={handleDecrypt}>
+              Decrypt
+            </button>
+          </div>
+          {decrypted && (
+            <div className="output-group">
+              <label>Decrypted:</label>
+              <textarea
+                className="output-decrypted"
+                value={decrypted}
+                readOnly
+              />
+            </div>
+          )}
+        </>
+      )}
     </div>
   );
 }
