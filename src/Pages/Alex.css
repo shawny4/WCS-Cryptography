@@ -39,7 +39,7 @@
   
   .encrypt-button, .decrypt-button {
     /* Style your buttons */
-    background-color: #61dafb; /* Button background color */
+    background-color: #b136d3; /* Button background color */
     color: white; /* Button text color */
     border: none;
     padding: 10px 20px;
@@ -50,7 +50,7 @@
   .encrypt-button:hover, .decrypt-button:hover {
     /* Hover effect for buttons */
     background-color: #fff;
-    color: #61dafb;
+    color: #b136d3;
   }
  
   
