@@ -1,0 +1,64 @@
+.block-cipher-demo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .text-input,
+  .key-input,
+  .output-encrypted,
+  .output-decrypted {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: white; /* Set text color to white */
+    background-color: #000; /* Set a dark background color */
+    border: 1px solid #fff; /* Set a white border */
+  }
+  ::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Light white for placeholder text */
+  }
+  .key-input[readonly] {
+    background-color: #333; /* Darker background for readonly */
+  }
+  label {
+    color: rgb(255, 255, 255); /* Set label text color to white */
+    /* Other styling as needed */
+  }
+  
+  .encrypt-button,
+  .decrypt-button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .encrypt-button:hover,
+  .decrypt-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .output-group {
+    width: 100%;
+  }
+  
+  textarea.output-encrypted,
+  textarea.output-decrypted {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
