@@ -14,7 +14,7 @@ const LoadingScreen = ({ isVisible }) => { // Accept isVisible prop
   };
 
   return (
-    <div className={`loading-overlay ${!isVisible ? 'hidden' : ''}`}> {/* Use isVisible to toggle the hidden class */}
+    <div className={`loading-overlay ${!isVisible ? 'hidden' : ' col'}`}> {/* Use isVisible to toggle the hidden class */}
       <Lottie options={defaultOptions} height={300} width={300} />
     </div>
   );
