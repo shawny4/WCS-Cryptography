@@ -22,7 +22,7 @@ function App() {
     const timer = setTimeout(() => {
       setIsLoading(false);
       setStartAnimation(true); // Trigger animation after loading is done
-    }, 2500); // Loading time
+    }, 1500); // Loading time
 
     return () => clearTimeout(timer);
   }, []);
