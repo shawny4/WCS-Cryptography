@@ -15,6 +15,8 @@ import Vanson from './Pages/Vanson';
 import Web from './Pages/Web';
 import Home from './Home';
 import Alex from './Pages/Alex';
+import CeasarCipher from './crypto';
+
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -51,17 +53,10 @@ function App() {
           <img src={logo} alt="Logo"  className="App-logo"/>
             <nav>
               <NavLink to ="idkLol"> uhhhhh</NavLink>
-
-            
-
               <NavLink to="Shawn">Shawn</NavLink>
               <NavLink to="Vanson">Vanson</NavLink>
-
-            
-              <NavLink to="Web"> Web</NavLink>
-
               <NavLink to="Alex">Alex</NavLink>
-
+              <NavLink to="Vanya">Vanya</NavLink>
               <NavLink to="/">Home</NavLink>
 
               
@@ -81,13 +76,10 @@ function App() {
             <Route path="/" element={<Home />} />
 
               <Route path="/idkLol" element={<Duck/>}/>
-            
               <Route path="Web" element={<Web/>} />
-
-
               <Route path="Shawn" element={<Shawn/>} />
               <Route path="Vanson" element={<Vanson/>}/>
-
+              <Route path="Vanya" element={<CeasarCipher/>}/>
               <Route path="Alex" element= {<Alex/>}/>
 
             </Routes> 
