@@ -1,3 +1,6 @@
+//ORIGINAL CODE COMMENTED
+
+/*
 function inputs() {
     let choice = prompt("What type of cipher would u like?");
     if (choice.toLowerCase() === "b") {
@@ -89,3 +92,117 @@ function streamCipher() {
 
 
 inputs()
+*/
+
+import React, { useState } from 'react';
+
+function CeasarCipher() {
+    const [choice, setChoice] = useState('');
+    const [message, setMessage] = useState('');
+    const [key, setKey] = useState('');
+    const [encrypted, setEncrypted] = useState('');
+    const [decrypted, setDecrypted] = useState('');
+
+    const handleChoiceChange = (event) => {
+        setChoice(event.target.value.toLowerCase());
+    };
+
+    const handleMessageChange = (event) => {
+        setMessage(event.target.value.toLowerCase());
+    };
+
+    const handleKeyChange = (event) => {
+        setKey(event.target.value);
+    };
+
+    const caesarCipher = () => {
+        let encryptedText = '';
+        for (let i = 0; i < message.length; i++) {
+            let char = message[i];
+            encryptedText += String.fromCharCode(
+                (char.charCodeAt(0) - (char >= 'A' && char <= 'Z' ? 'A' : 'a').charCodeAt(0) + 5) % 26 +
+                (char >= 'A' && char <= 'Z' ? 'A' : 'a').charCodeAt(0)
+            );
+        }
+        setEncrypted(encryptedText);
+
+        let decryptedText = '';
+        for (let i = 0; i < encryptedText.length; i++) {
+            decryptedText += String.fromCharCode(encryptedText.charCodeAt(i) - 5);
+        }
+        setDecrypted(decryptedText);
+    };
+
+    const xorTwoStrings = (a, b) => {
+        let result = '';
+        for (let i = 0; i < Math.max(a.length, b.length); i++) {
+            result += String.fromCharCode(a.charCodeAt(i % a.length) ^ b.charCodeAt(i % b.length));
+        }
+        return result;
+    };
+
+    const streamCipher = () => {
+        let encryptedText, decryptedText;
+        if (!isNaN(key) && !isNaN(message)) {
+            const parsedKey = parseInt(key);
+            const parsedMessage = parseInt(message);
+            encryptedText = parsedKey ^ parsedMessage;
+            decryptedText = parsedKey ^ encryptedText;
+        } else {
+            encryptedText = xorTwoStrings(key, message);
+            decryptedText = xorTwoStrings(encryptedText, key);
+        }
+        setEncrypted(encryptedText);
+        setDecrypted(decryptedText);
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (choice === 'c') {
+            caesarCipher();
+        } else if (choice === 'b') {
+            // Implement block cipher function
+        } else if (choice === 's') {
+            streamCipher();
+        }
+    };
+
+    return (
+        <div>
+            <form onSubmit={handleSubmit}>
+                <label>
+                    What type of cipher would you like? (c for Caesar Cipher, s for Stream Cipher):
+                    <input type="text" value={choice} onChange={handleChoiceChange} />
+                </label>
+                <br />
+                {choice === 'c' && (
+                    <div>
+                        <label>
+                            Enter your message:
+                            <input type="text" value={message} onChange={handleMessageChange} />
+                        </label>
+                        <br />
+                    </div>
+                )}
+                {(choice === 's') && (
+                    <div>
+                        <label>
+                            Enter your key:
+                            <input type="text" value={key} onChange={handleKeyChange} />
+                        </label>
+                        <br />
+                    </div>
+                )}
+                {(choice === 's' || choice === 'c') && <button type="submit">Encrypt</button>}
+            </form>
+            {encrypted && (
+                <div>
+                    <p>Encrypted text: {encrypted}</p>
+                    <p>Decrypted text: {decrypted}</p>
+                </div>
+            )}
+        </div>
+    );
+}
+
+export default CeasarCipher;
