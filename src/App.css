@@ -4,6 +4,7 @@
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
+  font-family: 'good times', Courier, monospace;
 }
 .loading-overlay {
   position: fixed;
@@ -110,5 +111,5 @@
   transform: translateX(3%);
 }
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'good times', sans-serif;
 }
