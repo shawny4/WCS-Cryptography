@@ -22,7 +22,7 @@ function App() {
     const timer = setTimeout(() => {
       setIsLoading(false);
       setStartAnimation(true); // Trigger animation after loading is done
-    }, 2500); // Loading time
+    }, 1500); // Loading time
 
     return () => clearTimeout(timer);
   }, []);
@@ -40,8 +40,8 @@ function App() {
               <img src={logo} className={`App-logo ${startAnimation ? 'fade-in' : ''}`} alt="Logo" />
               <nav>
                 <NavLink to="/idkLol">uhhhhh</NavLink>
-                <NavLink to="/Shawn">Shawn</NavLink>
                 <NavLink to="/Vanson">Vanson</NavLink>
+                <NavLink to="/Shawn">Shawn</NavLink>
                 <NavLink to="/Web">Web</NavLink>
                 <NavLink to="/Alex">Alex</NavLink>
                 <NavLink to="/">Home</NavLink>
