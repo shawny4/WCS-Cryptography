@@ -37,14 +37,18 @@
     /* Other styling as needed */
   }
   
-  .encrypt-button, .decrypt-button {
-    /* Style your buttons */
+  .encrypt-button, .decrypt-button, .reset-button {
     background-color: #b136d3; /* Button background color */
     color: white; /* Button text color */
     border: none;
+    border-radius: 5px; /* Rounded corners for the buttons */
     padding: 10px 20px;
-    margin: 10px;
+    margin: 10px 0; /* Vertical margin, no horizontal margin */
     cursor: pointer; /* Cursor to pointer to indicate it's clickable */
+    width: 100px; /* Set a fixed width for uniformity */
+    display: block; /* Block level so it takes up its own line */
+    margin-left: auto; /* Margins set to auto for horizontal centering */
+    margin-right: auto;
   }
   
   .encrypt-button:hover, .decrypt-button:hover {
@@ -75,3 +79,21 @@
   box-sizing: border-box;
 }
   
+ .reset-button:hover {
+  /* Hover effect for buttons */
+  background-color: #fff;
+  color: #b136d3;
+}
+
+.output-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns items to the left */
+}
+
+.output-action-buttons {
+  display: flex;
+  justify-content: center; 
+  gap: 10px; /* Spacing between buttons */
+  margin-top: 10px; /* Spacing above the buttons */
+}

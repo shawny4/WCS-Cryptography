@@ -44,6 +44,13 @@ function BlockCipherDemo() {
   const handleDecrypt = () => {
     setDecrypted(simpleDecrypt(encrypted, key));
   };
+  const resetFields = () => {
+    setText('');
+    setKey('');
+    setEncrypted('');
+    setDecrypted('');
+    setShowDecryption(false);
+  };
 
 
   return (
@@ -81,14 +88,17 @@ function BlockCipherDemo() {
             </button>
           </div>
           {decrypted && (
-            <div className="output-group">
-              <label>Decrypted:</label>
-              <textarea
-                className="output-decrypted"
-                value={decrypted}
-                readOnly
-              />
-            </div>
+            <div className="output-group decrypted-group">
+            <label>Decrypted:</label>
+            <textarea
+              className="output-decrypted"
+              value={decrypted}
+              readOnly
+            />
+            <button className="reset-button" onClick={resetFields}>
+              Reset
+            </button>
+          </div>
           )}
         </>
       )}
