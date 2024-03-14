@@ -40,11 +40,11 @@ label {
   text-align: left;
 }
 
-button {
+.encrypt-button, .decrypt-button, .reset-button {
   background-color: #b136d3;
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 4px;
   padding: 10px 20px;
   margin: 10px auto;
   cursor: pointer;
