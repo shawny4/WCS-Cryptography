@@ -113,3 +113,15 @@
 body {
   font-family: 'good times', sans-serif;
 }
+.fade-in {
+  animation: fadeInAnimation 1s ease forwards;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
