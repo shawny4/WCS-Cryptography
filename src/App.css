@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'good times';
+  src: url('./fonts/good times rg.otf') format('opentype');
+
+}
 .App {
   background-image: url('./images/Screenshot 2024-03-07 at 1.29.02 PM.png');
   background-size: cover;
