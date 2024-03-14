@@ -31,15 +31,15 @@
   }
 }
 .home-line:nth-child(1) {
-  animation: slideInFromLeft1 1s ease-out 4s forwards;
+  animation: slideInFromLeft1 1s ease-out 0s forwards;
 }
 
 .home-line:nth-child(2) {
-  animation: slideInFromLeft2 1s ease-out 4.5s forwards;
+  animation: slideInFromLeft2 1s ease-out 0.5s forwards;
 }
 
 .home-line:nth-child(3) {
-  animation: slideInFromLeft3 1s ease-out 5s forwards;
+  animation: slideInFromLeft3 1s ease-out 1s forwards;
 }
 
 .home-content {
@@ -60,7 +60,7 @@
      /* Text is centered */
     color: #ffffff; /* Text color is white */
     font-size: 1.5em; /* Font size is set to 2em, adjust as needed */
-    font-family: 'good times', sans-serif; /* Raleway font */
+    font-family: 'good times', sans-serif; /*good times*/
     opacity: 0; 
     /* Adjust the transform values as needed */
   }
