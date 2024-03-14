@@ -1,99 +1,72 @@
 .block-cipher-demo {
-  /* Add styles for the overall layout of the block cipher demo area */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px;
 }
-  
+
 .input-group, .output-group {
-  /* Style your input and output groups */
-  background: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
-  border: 1px solid #fff; /* White border */
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #fff;
+  border-radius: 10px;
   margin-bottom: 20px;
   padding: 10px;
-  width: 50%; /* Adjust width as needed */
+  width: 50%;
 }
 
-  
 .text-input, .key-output, .output-encrypted, .output-decrypted {
-  /* Style your input fields and output textareas */
-  width: 100%; /* Full width of their container */
+  width: 100%;
   margin: 10px 0;
   padding: 10px;
   color: white;
-  background: transparent; /* Transparent background */
-  border: 1px solid #fff; /* White border */
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 10px;
 }
-  ::placeholder {
-    color: rgba(255, 255, 255, 0.7); /* Light white for placeholder text */
-  }
-  .key-input[readonly] {
-    background-color: #333; /* Darker background for readonly */
-  }
-  label {
-    color: rgb(255, 255, 255); /* Set label text color to white */
-    /* Other styling as needed */
-  }
-  
-  .encrypt-button, .decrypt-button, .reset-button {
-    background-color: #b136d3; /* Button background color */
-    color: white; /* Button text color */
-    border: none;
-    border-radius: 5px; /* Rounded corners for the buttons */
-    padding: 10px 20px;
-    margin: 10px 0; /* Vertical margin, no horizontal margin */
-    cursor: pointer; /* Cursor to pointer to indicate it's clickable */
-    width: 100px; /* Set a fixed width for uniformity */
-    display: block; /* Block level so it takes up its own line */
-    margin-left: auto; /* Margins set to auto for horizontal centering */
-    margin-right: auto;
-  }
-  
-  .encrypt-button:hover, .decrypt-button:hover {
-    /* Hover effect for buttons */
-    background-color: #fff;
-    color: #b136d3;
-  }
- 
-  
-  textarea.output-encrypted,
-  textarea.output-decrypted {
-    width: 100%;
-    height: 100px;
-    margin-bottom: 20px;
-  }
-  
-  label {
-    /* Style labels */
-    color: white;
-    display: block; /* Each label on its own line */
-    margin: 10px 0;
-    text-align: left; 
-  }
-  /* Reset the padding and margin of all elements for consistency */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.7);
 }
-  
- .reset-button:hover {
-  /* Hover effect for buttons */
+
+.key-input[readonly] {
+  background-color: #333;
+}
+
+label {
+  color: white;
+  display: block;
+  margin: 10px 0;
+  text-align: left;
+}
+
+button {
+  background-color: #b136d3;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 10px auto;
+  cursor: pointer;
+  width: 100px;
+}
+
+button:hover {
   background-color: #fff;
   color: #b136d3;
 }
 
-.output-group {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Aligns items to the left */
+textarea.output-encrypted,
+textarea.output-decrypted {
+  height: 100px;
 }
 
-.output-action-buttons {
-  display: flex;
-  justify-content: center; 
-  gap: 10px; /* Spacing between buttons */
-  margin-top: 10px; /* Spacing above the buttons */
+.decrypted-group {
+  align-items: center; /* Center align the items for decrypted group */
+}
+/* Global reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }

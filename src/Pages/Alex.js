@@ -95,10 +95,12 @@ function BlockCipherDemo() {
               value={decrypted}
               readOnly
             />
-            <button className="reset-button" onClick={resetFields}>
-              Reset
-            </button>
-          </div>
+           
+              <button className="reset-button" onClick={resetFields}>
+                Reset
+              </button>
+            </div>
+         
           )}
         </>
       )}
