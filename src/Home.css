@@ -61,6 +61,7 @@
     color: #ffffff; /* Text color is white */
     font-size: 1.5em; /* Font size is set to 2em, adjust as needed */
     font-family: 'good times', sans-serif; /* Raleway font */
+    opacity: 0; 
     /* Adjust the transform values as needed */
   }
   
