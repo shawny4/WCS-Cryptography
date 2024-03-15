@@ -35,9 +35,9 @@
 
 /* Styling for the futuristic text box */
 .smaller-title-section p {
-  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
   padding: 20px; /* Padding inside the box */
- 
+  border-radius: 6px; /* Rounded corners for the box */
   border: 1px solid #ad1bb5; /* Optional: Adds a border for the neon effect */
   box-shadow: 0 0 10px #ad1bb5;; /* Optional: Adds a glow effect to the border */
   color: #ffffff; /* White color for the font */
