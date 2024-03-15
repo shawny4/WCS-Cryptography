@@ -46,6 +46,8 @@
     text-align: center;
     padding: 0px;
     transform: translateY(-2%);
+    position: relative; /* For z-index to take effect */
+    z-index: 2; /* Above the fixed background */
   }
   
   .home-title {
@@ -55,7 +57,7 @@
   
   .home-line {
     display: block; /* Each line is displayed on a new row */
-    margin-top: 90px;
+    margin-top: 100px;
     margin-bottom: -80px;
      /* Text is centered */
     color: #ffffff; /* Text color is white */
@@ -64,5 +66,16 @@
     opacity: 0; 
     /* Adjust the transform values as needed */
   }
+  /* Add to your Home.css */
+.home-content {
+  position: relative; /* Ensure positioning context */
+  z-index: 2; /* Ensure it's above the background */
+}
+
+/* New class for wrapping the content that should scroll over the background */
+.scrollable-content {
+  position: relative;
+  z-index: 2; /* Above the fixed background */
+}
   
   

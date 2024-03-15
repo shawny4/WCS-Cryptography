@@ -8,8 +8,10 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed; /* Keep the background fixed */
   min-height: 100vh;
   font-family: 'good times', Courier, monospace;
+  
 }
 .loading-overlay {
   position: fixed;
@@ -129,4 +131,9 @@ body {
   to {
     opacity: 1;
   }
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
 }

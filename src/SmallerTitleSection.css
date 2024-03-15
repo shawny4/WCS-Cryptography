@@ -1,0 +1,31 @@
+.smaller-title-section {
+    color: #ffffff; /* White color for the font */
+    margin-top:280px; /* Push down the section further */
+    opacity: 0;
+    transform: translateY(50px); /* Start a bit lower for the animation */
+    /* Remove transition properties since we are using animation */
+    margin-bottom: 0px;
+  }
+  
+  .smaller-title-section img {
+    max-width: 100%;
+    height: auto; /* Ensure the image maintains its aspect ratio */
+  }
+  
+  /* Trigger the animation once and do not revert to the initial state */
+  .home-content.scrolled .smaller-title-section {
+    /* Apply the animation when the 'scrolled' class is added */
+    animation: fadeInUp 1s ease-in-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px); /* Start a bit lower */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

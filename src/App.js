@@ -9,6 +9,7 @@ import Web from './Pages/Web';
 import Alex from './Pages/Alex';
 import './App.css'; // Ensure your styles are correctly applied
 
+
 // Assuming logo is correctly imported or defined elsewhere in your project
 import logo from './images/wcs_logo_transparent_background2.png';
 
@@ -58,6 +59,7 @@ function App() {
                   <Route path="/Vanson" element={<Vanson />} />
                   <Route path="/Alex" element={<Alex />} />
                 </Routes>
+           
               </div>
             </main>
           </>
