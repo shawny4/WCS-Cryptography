@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/WCS-Cryptography.github.io/static/css/main.fdeb5556.css",
+    "main.js": "/WCS-Cryptography.github.io/static/js/main.ca7dee2b.js",
+    "static/media/Screenshot 2024-03-07 at 1.29.02 PM.png": "/WCS-Cryptography.github.io/static/media/Screenshot 2024-03-07 at 1.29.02 PM.dd424b7f3258f8f59ed4.png",
+    "static/media/quack.png": "/WCS-Cryptography.github.io/static/media/quack.fb543a4bb05bc083bd38.png",
+    "static/media/Vanson-cipher.png": "/WCS-Cryptography.github.io/static/media/Vanson-cipher.cadb6df0bcf075e6f869.png",
+    "static/media/Shawn-CBC_Block_Cipher.png": "/WCS-Cryptography.github.io/static/media/Shawn-CBC_Block_Cipher.bf1d714469db20e2e872.png",
+    "static/media/good times rg.otf": "/WCS-Cryptography.github.io/static/media/good times rg.a86d4f7f5cdb8cf2e409.otf",
+    "static/media/wcs_logo_transparent_background2.png": "/WCS-Cryptography.github.io/static/media/wcs_logo_transparent_background2.4daa1a341f90489a93c9.png",
+    "index.html": "/WCS-Cryptography.github.io/index.html",
+    "main.fdeb5556.css.map": "/WCS-Cryptography.github.io/static/css/main.fdeb5556.css.map",
+    "main.ca7dee2b.js.map": "/WCS-Cryptography.github.io/static/js/main.ca7dee2b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fdeb5556.css",
+    "static/js/main.ca7dee2b.js"
+  ]
+}
