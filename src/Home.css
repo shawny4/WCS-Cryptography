@@ -5,7 +5,7 @@
   }
   to {
     opacity: 1;
-    transform: translateX(-7%);
+    transform: translateX(-14%);
   }
 }
 
@@ -16,7 +16,7 @@
   }
   to {
     opacity: 1;
-    transform: translateX(3%) translateY(-3%);
+    transform: translateX(0%) translateY(-3%);
   }
 }
 
@@ -27,7 +27,7 @@
   }
   to {
     opacity: 1;
-    transform: translateX(3%);
+    transform: translateX(1%);
   }
 }
 .home-line:nth-child(1) {
