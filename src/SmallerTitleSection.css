@@ -1,6 +1,6 @@
 .smaller-title-section {
   color: #ffffff;
-  margin-top: 300px;
+  margin-top: 400px;
   /* Initial state - set as hidden */
   opacity: 0;
   transform: translateY(50px);
@@ -24,4 +24,31 @@
 @keyframes fadeOutDown {
   from { opacity: 1; transform: translateY(0); }
   to { opacity: 0; transform: translateY(50px); }
+}
+/* Increase the size and adjust the styling of the title */
+.smaller-title-section h2 {
+  font-size: 3em; /* Larger font size */
+  color: #ffffff; /* White color for the font */
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Optional: Adds a shadow for a glowing effect */
+  margin-bottom: 20px; /* Space between the title and the image */
+}
+
+/* Styling for the futuristic text box */
+.smaller-title-section p {
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  padding: 20px; /* Padding inside the box */
+ 
+  border: 1px solid #ad1bb5; /* Optional: Adds a border for the neon effect */
+  box-shadow: 0 0 10px #ad1bb5;; /* Optional: Adds a glow effect to the border */
+  color: #ffffff; /* White color for the font */
+  font-size: 1.1em; /* Adjust the font size as needed */
+  line-height: 1.6; /* Adjust line height for better readability */
+}
+
+/* Responsive image styling */
+.smaller-title-section img {
+  max-width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensure it takes its own line */
+  margin: 0 auto 20px; /* Center the image and add margin below */
 }
