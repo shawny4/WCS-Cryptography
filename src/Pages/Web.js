@@ -187,6 +187,7 @@ const BlockChainAndRNG = () => {
                             defaultValue={""} 
                             className="web-text"
                             value={plaintext}
+                            placeholder="Enter in plaintext to encrypt"
                             onChange={e => setPt(e.target.value)}
                         />
                         <button 
