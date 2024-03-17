@@ -1,5 +1,8 @@
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import "./Web.css";
+import process from "./Process.png";
+import keyGenProcess from "./Key Gen Process.png";
 
 //simple block chain and number generation program
 
@@ -166,52 +169,85 @@ const BlockChainAndRNG = () => {
     const [block, setBlock] = useState("");
     const [inKey, setInKey] = useState("");
     const [outStr, setOutStr] = useState("");
+
+    const processRef = useRef(null);
+    const kGRef = useRef(null);
+    const processScroll = () => processRef.current.scrollIntoView()
+    const kGScroll = () => kGRef.current.scrollIntoView()
     
     return(
-        <div className = "createBlock">
-            {key === "" && <button type="submit" onClick={()=> setKey(randomNumGen(6))}>Generate Key</button>}
+        <div className = "web-block-cipher">
+            <div className="input-group">
+                {key === "" && <button type="submit" className="encrypt-button" onClick={()=> setKey(randomNumGen(6))}>Generate Key</button>}
 
-            {key !=="" && <p class = "returned_text">Your Key: {keyToString(key)}</p>}
+                {key !=="" && block === "" && 
+                    <div className="web-text">
+                        <input 
+                            id="enter" 
+                            defaultValue={""} 
+                            className="web-text"
+                            value={plaintext}
+                            onChange={e => setPt(e.target.value)}
+                        />
+                        <button 
+                            type="submit"
+                            className="encrypt-button"
+                            onClick={()=> setBlock(new Block(plaintext, key))}
+                        > Create New Blockchain </button>
+                    </div>
+                }
 
-            {key !== "" && block === "" &&
-                <label>
-                    Enter a string: <input 
-                        id="enter" 
-                        defaultValue={""} 
-                        value={plaintext}
-                        onChange={e => setPt(e.target.value)}
-                    />
+                {key !== "" && 
+                    <div className="web-text">
+                        <br/><p>Entered Plaintext: {plaintext}</p>
+                        <br/><p>Your Key: {keyToString(key)}</p><br/>
+                    </div>
+                }
+                
+                {block !== "" &&
+                    <div>
+                        <label>To decrypt, enter your key: </label>
+                        <input
+                            id="enter" 
+                            defaultValue={""} 
+                            className="web-text"
+                            value={inKey}
+                            onChange={e => setInKey(e.target.value)}
+                        />
 
-                    <button 
-                        type="submit"
-                        onClick={()=> setBlock(new Block(plaintext, key))}
-                    > Create New Blockchain </button>
-                </label>
+                        <button 
+                            type="submit"
+                            className="encrypt-button"
+                            onClick={()=> {
+                                setOutStr(block.decode(stringToKey(inKey))); 
+                                console.log(block.getCText());
+                            }}
+                        > Decrypt Blockchain </button>
+                    </div>
+                }
+
+                {outStr !== "" && <p class = "web-text">Decrypted Text: {outStr}</p>}
+            </div>
+
+            {outStr !== "" &&
+                <button 
+                    type="submit"
+                    className="encrypt-button"
+                    onClick={processScroll}
+                > Want to Learn the Process? </button>
             }
+            
+            {outStr !== "" && 
+            <div ref={processRef} className="info-group">
+                <img src={process} alt="process"></img>
+                <br/><button 
+                    type="submit"
+                    className="encrypt-button"
+                    onClick={kGScroll}
+                > Psuedo Random Number Generator </button>
+            </div>}
 
-            {plaintext !=="" && <p class = "returned_text">Entered Plaintext: {plaintext}</p>}
-
-            {block !== "" &&
-                <label>
-                    To decrypt, enter your key: <input 
-                        id="enter" 
-                        defaultValue={""} 
-                        value={inKey}
-                        onChange={e => setInKey(e.target.value)}
-                    />
-
-                    <button 
-                        type="submit"
-                        onClick={()=> {
-                            setOutStr(block.decode(stringToKey(inKey))); 
-                            console.log(block.getCText());
-                        }}
-                    > Decrypt Blockchain </button>
-                </label>
-            }
-
-            {outStr !== "" && <p class = "returned_text">Decrypted Text: {outStr}</p>}
-
+            {outStr !== "" && <img ref={kGRef} className="info-group" src={keyGenProcess}></img>}
         </div>
     );
 }
