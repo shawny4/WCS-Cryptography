@@ -1,0 +1,91 @@
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.process {
+  align-self: center;
+}
+
+.web-block-cipher {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.web-group {
+  background: rgba(0, 0, 0, 0.3);  
+  border: 1px solid #fff; 
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 50%; 
+}
+
+.info-group {
+  background: rgba(0, 0, 0, 0.3);  
+  border: 1px solid #fff; 
+  margin-top: 100%;
+  margin-bottom: 100%;
+  padding: 10px;
+  width: 60%; 
+}
+
+.web-text {
+  width: 100%; 
+  margin: 10px 0;
+  padding: 10px;
+  color: white;
+  background: transparent; 
+  border: 1px solid #fff; 
+}
+  ::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Light white for placeholder text */
+  }
+  .key-input[readonly] {
+    background-color: #333; /* Darker background for readonly */
+  }
+  label {
+    color: rgb(255, 255, 255); /* Set label text color to white */
+    /* Other styling as needed */
+  }
+  
+  .encrypt-button, .decrypt-button {
+    /* Style your buttons */
+    background-color: #b136d3; /* Button background color */
+    color: white; /* Button text color */
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer; /* Cursor to pointer to indicate it's clickable */
+  }
+  
+  .encrypt-button:hover, .decrypt-button:hover {
+    /* Hover effect for buttons */
+    background-color: #fff;
+    color: #b136d3;
+  }
+ 
+  
+  textarea.output-encrypted,
+  textarea.output-decrypted {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    /* Style labels */
+    color: white;
+    display: block; /* Each label on its own line */
+    margin: 10px 0;
+    text-align: left; 
+  }
+  /* Reset the padding and margin of all elements for consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+  
