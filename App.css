@@ -1,0 +1,115 @@
+.App {
+  background-image: url('./images/Screenshot 2024-03-07 at 1.29.02 PM.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(65, 65, 65, 0.8); /* Semi-transparent white background */
+  z-index: 1000; /* Higher than everything else */
+}
+
+.is-blurred {
+  filter: blur(8px); /* Adjust blur strength as needed */
+}
+
+/* Add transition for smooth blur effect */
+.App, .App * {
+  transition: filter 1.5s;
+}
+.App-logo {
+  width: 230px; /* Increase the width of the logo */
+  position: absolute; /* Take it out of the flow to move it freely */
+  top: 40px; /* Adjust this to move it down a bit from the top */
+  left:10%; /* Start at half the width of the page */
+  transform: translateX(-70%) translateY(-40%); /* Center align the logo horizontally and move it up */
+  z-index: 10;
+}
+
+.App-header {
+  position: relative; /* Needed for absolute positioning children */
+  display: flex;
+  align-items: center; /* Vertically center children */
+  justify-content: space-between; /* Positions children on opposite ends (left and right) */
+  padding: 20px; /* Padding on all sides */
+  width: 100%; /* Full width */
+}
+
+.App-header h1 {
+  position: absolute; /* Take it out of the flow to move it freely */
+  left: 50%; /* Start at half the width of the page */
+  top: 50%; /* Start at half the height of the header */
+  transform: translate(-50%, -50%); /* Center the element exactly */
+ 
+  font-size: 8em;
+  margin: 0; /* Remove margin */
+  z-index: 9;
+}
+
+.App-header nav {
+  position: absolute; /* Absolute position to move freely */
+  right: 50px; /* Align to the right side */
+  top: 40px; /* Align vertically with the logo */
+  display: flex;
+  align-items: center; /* Vertically center links */
+}
+
+
+.App-header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 20px; /* Increase margin for larger gaps */
+  font-size: 1.5em; /* Increase font size for bigger nav links */
+}
+
+.App-header nav a:hover {
+  color: #d747ff;
+}
+
+.content {
+  text-align: center;
+  padding: 120px ;
+}
+
+.content h1 {
+  color: #ffffff;
+  font-size: 5em;
+  margin-bottom: 0.5em;
+}
+/* Individual line styling */
+.line {
+  display: block; /* Makes each line a separate block */
+  text-align: center; /* Centers the text within the block */
+  color: #ffffff; /* White color text */
+  font-size: 2em; /* Large font size */
+ 
+}
+
+#line1 {
+  /* Moves the first line a little to the left */
+  
+  transform: translateX(-7%);
+}
+
+#line2 {
+  /* The second line a bit to the right */
+  transform: translateX(3%) translateY(-3%);
+}
+
+#line3 {
+  /* The third line a bit more to the right */
+  transform: translateX(3%);
+}
+body {
+  font-family: 'Raleway', sans-serif;
+}
