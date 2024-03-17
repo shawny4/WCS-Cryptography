@@ -1,7 +1,53 @@
+@keyframes slideInFromLeft1 {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-11.3%);
+  }
+}
+
+@keyframes slideInFromLeft2 {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-4%) translateY(-3%);
+  }
+}
+
+@keyframes slideInFromLeft3 {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(8%);
+  }
+}
+.home-line:nth-child(1) {
+  animation: slideInFromLeft1 1s ease-out 0s forwards;
+}
+
+.home-line:nth-child(2) {
+  animation: slideInFromLeft2 1s ease-out 0.5s forwards;
+}
+
+.home-line:nth-child(3) {
+  animation: slideInFromLeft3 1s ease-out 1s forwards;
+}
+
 .home-content {
     text-align: center;
     padding: 0px;
     transform: translateY(-2%);
+    position: relative; /* For z-index to take effect */
+    z-index: 2; /* Above the fixed background */
   }
   
   .home-title {
@@ -11,24 +57,25 @@
   
   .home-line {
     display: block; /* Each line is displayed on a new row */
-    text-align: center; /* Text is centered */
+    margin-top: 100px;
+    margin-bottom: -80px;
+     /* Text is centered */
     color: #ffffff; /* Text color is white */
-    font-size: 2em; /* Font size is set to 2em, adjust as needed */
-    font-family: 'Raleway', sans-serif; /* Raleway font */
+    font-size: 1.5em; /* Font size is set to 2em, adjust as needed */
+    font-family: 'good times', sans-serif; /*good times*/
+    opacity: 0; 
     /* Adjust the transform values as needed */
   }
+  /* Add to your Home.css */
+.home-content {
+  position: relative; /* Ensure positioning context */
+  z-index: 2; /* Ensure it's above the background */
+}
+
+/* New class for wrapping the content that should scroll over the background */
+.scrollable-content {
+  position: relative;
+  z-index: 2; /* Above the fixed background */
+}
   
-  .home-line:nth-child(1) {
-    /* Move the first line slightly to the left and up */
-    transform: translateX(-7%);
-  }
   
-  .home-line:nth-child(2) {
-    /* Center the second line */
-    transform: translateX(3%) translateY(-3%);
-  }
-  
-  .home-line:nth-child(3) {
-    /* Move the third line slightly to the right and up */
-    transform: translateX(3%);
-  }
