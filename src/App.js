@@ -2,15 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import LoadingScreen from './LoadingScreen'; // Ensure this component is correctly implemented
 import Home from './Home'; // Your Home component
-import Duck from './Duck'; // Other components
-import Shawn from './Pages/Shawn';
+import Shawn from './Pages/Shawn';// Other components
 import Vanson from './Pages/Vanson';
 import Web from './Pages/Web';
 import Alex from './Pages/Alex';
 import Sanvid from './Pages/Sanvid';
 import Mollo from './Pages/Mollo';
 import Dominik from './Pages/Dominik';
-
+import CeasarCipher from './crypto';
 
 import './App.css'; // Ensure your styles are correctly applied
 
@@ -43,14 +42,16 @@ function App() {
             <header className={`App-header ${startAnimation ? 'fade-in' : ''}`}>
               <img src={logo} className={`App-logo ${startAnimation ? 'fade-in' : ''}`} alt="Logo" />
               <nav>
-                <NavLink to="/idkLol">uhhhhh</NavLink>
+                <NavLink to="/Vanya">Vanya</NavLink>
                 <NavLink to="/Vanson">Vanson</NavLink>
                 <NavLink to="/Shawn">Shawn</NavLink>
                 <NavLink to="/Web">Web</NavLink>
                 <NavLink to="/Alex">Alex</NavLink>
+
                 <NavLink to="/Sanvid">Sanvid</NavLink>
                 <NavLink to="/Mollo">Mollo</NavLink>
                 <NavLink to="/Dominik">Dominik</NavLink>
+
                 <NavLink to="/">Home</NavLink>
               </nav>
             </header>
@@ -59,10 +60,10 @@ function App() {
                 <Routes>
                   <Route path="/" element={<Home />} />
                   {/* Other routes */}
-                  <Route path="/idkLol" element={<Duck />} />
                   <Route path="/Web" element={<Web />} />
                   <Route path="/Shawn" element={<Shawn />} />
                   <Route path="/Vanson" element={<Vanson />} />
+                  <Route path="/Vanya" element={<CeasarCipher />} />
                   <Route path="/Alex" element={<Alex />} />
                   <Route path="/Sanvid" element={<Sanvid />} />
                   <Route path="/Mollo" element={<Mollo />} />
