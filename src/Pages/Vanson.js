@@ -98,7 +98,7 @@ function extendKey(key, message) {
       {encrypt!==""&&<button className="decrypt-button"onClick={()=>xor(encrypt,password,setPT)}style={{position:"absolute",top:"550px",left:"667px"}}>Decrypt</button>}
       {(input!==""||password!=="")&&<button className="encrypt-button" onClick={()=>clear()} style={{position:"absolute",top:"600px",left:"140px"}}>Clear</button>}
 
-      {input!=="" && <p className="returned_text" style={{top:"300px",left:"149px"}}>{input}</p>}
+      {input!=="" && <p className="returned_text" style={{top:"32.4%",left:"149px"}}>{input}</p>}
       {password!=="" && <p className="returned_text" style={{top:"390.5px",left:"149px"}}>{password}</p>}
      
       {encrypt!=="" && <p className="returned_text" style={{top:"300px",left:"667px"}}>{encrypt}</p>}
