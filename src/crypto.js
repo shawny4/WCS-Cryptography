@@ -206,8 +206,8 @@ function CeasarCipher() {
             </form>
             {encrypted && (
                 <div>
-                    <p>Encrypted text: {encrypted}</p>
-                    <p>Decrypted text: {decrypted}</p>
+                    <label>Encrypted text: {encrypted}</label>
+                    <label>Decrypted text: {decrypted}</label>
                 </div>
             )}
         </div>
