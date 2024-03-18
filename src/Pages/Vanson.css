@@ -1,0 +1,9 @@
+.returned_text{
+    background-color: #82caeb;
+    color: black;
+    padding: 10px 20px;
+    margin: 10px auto;
+    cursor: pointer;
+    width: 254px;
+    position:absolute;
+}
