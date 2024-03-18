@@ -10,6 +10,9 @@ import Web from './Pages/Web';
 import Alex from './Pages/Alex';
 import CeasarCipher from './crypto';
 import Dominik from './Pages/Dom';
+import Sanvid from './Pages/Sanvid';
+import Mollo from './Pages/Mollo';
+
 //import CeasarCipher from './crypto';
 
 import './App.css'; // Ensure your styles are correctly applied
@@ -45,13 +48,15 @@ function App() {
             <header className={`App-header ${startAnimation ? 'fade-in' : ''}`}>
               <img src={logo} className={`App-logo ${startAnimation ? 'fade-in' : ''}`} alt="Logo" />
               <nav>
-                <NavLink to="/idkLol">uhhhhh</NavLink>
+           
+                <NavLink to="/Sanvid">Sanvid</NavLink>
+                <NavLink to="/Mollo">Mollo</NavLink>
+                <NavLink to="/Dominik">Dominik</NavLink>
+                <NavLink to="/Vanya">Vanya</NavLink>
                 <NavLink to="/Vanson">Vanson</NavLink>
+                <NavLink to="/Alex">Alex</NavLink>
                 <NavLink to="/Shawn">Shawn</NavLink>
                 <NavLink to="/Web">Web</NavLink>
-                <NavLink to="/Alex">Alex</NavLink>
-                <NavLink to="/Vanya">Vanya</NavLink>
-                <NavLink to="/Dominik">Dominik</NavLink>
                 <NavLink to="/">Home</NavLink>
               </nav>
             </header>
@@ -60,13 +65,15 @@ function App() {
                 <Routes>
                   <Route path="/" element={<Home />} />
                   {/* Other routes */}
-                  <Route path="/idkLol" element={<Duck />} />
+         
                   <Route path="/Web" element={<Web />} />
                   <Route path="/Shawn" element={<Shawn />} />
                   <Route path="/Vanson" element={<Vanson />} />
                   <Route path="/Vanya" element={<CeasarCipher />} />
                   <Route path="/Dominik" element={<Dominik />} />
                   <Route path="/Alex" element={<Alex />} />
+                  <Route path="/Sanvid" element={<Sanvid />} />
+                  <Route path="/Mollo" element={<Mollo />} />
                 </Routes>
            
               </div>
