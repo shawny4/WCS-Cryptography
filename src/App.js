@@ -52,7 +52,7 @@ function App() {
                 <NavLink to="/Sanvid">Sanvid</NavLink>
                 <NavLink to="/Mollo">Mollo</NavLink>
                 <NavLink to="/Dominik">Dominik</NavLink>
-                <NavLink to="/Vanya">Vanya</NavLink>
+                <NavLink to="/Vanya">Vaanya</NavLink>
                 <NavLink to="/Vanson">Vanson</NavLink>
                 <NavLink to="/Alex">Alex</NavLink>
                 <NavLink to="/Shawn">Shawn</NavLink>
