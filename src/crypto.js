@@ -152,8 +152,8 @@ function CeasarCipher() {
             encryptedText = xorTwoStrings(key, message);
             decryptedText = xorTwoStrings(encryptedText, key);
         }
-        setEncrypted(encryptedText);
-        setDecrypted(decryptedText);
+        setEncrypted(encryptedText.toString()); // Convert encryptedText to string
+        setDecrypted(decryptedText.toString()); // Convert decryptedText to string
     };
 
     const handleSubmit = (event) => {
@@ -187,13 +187,22 @@ function CeasarCipher() {
                 {(choice === 's') && (
                     <div>
                         <label>
-                            Enter your key:
+                            Enter your key (integers):
                             <input type="text" value={key} onChange={handleKeyChange} />
                         </label>
                         <br />
                     </div>
                 )}
-                {(choice === 's' || choice === 'c') && <button type="submit">Encrypt</button>}
+                {choice === 's' && (
+                    <div>
+                        <label>
+                            Enter your plain text:
+                            <input type="text" value={message} onChange={handleMessageChange} />
+                        </label>
+                        <br />
+                    </div>
+                )}
+                {(choice === 's' || choice === 'c') && <button type="submit" className="encrypt-button">Encrypt</button>}
             </form>
             {encrypted && (
                 <div>

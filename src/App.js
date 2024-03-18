@@ -8,6 +8,7 @@ import Shawn from './Pages/Shawn';
 import Vanson from './Pages/Vanson';
 import Web from './Pages/Web';
 import Alex from './Pages/Alex';
+import CeasarCipher from './crypto';
 //import CeasarCipher from './crypto';
 
 import './App.css'; // Ensure your styles are correctly applied
@@ -48,6 +49,7 @@ function App() {
                 <NavLink to="/Shawn">Shawn</NavLink>
                 <NavLink to="/Web">Web</NavLink>
                 <NavLink to="/Alex">Alex</NavLink>
+                <NavLink to="/Vanya">Vanya</NavLink>
                 <NavLink to="/">Home</NavLink>
               </nav>
             </header>
@@ -60,6 +62,7 @@ function App() {
                   <Route path="/Web" element={<Web />} />
                   <Route path="/Shawn" element={<Shawn />} />
                   <Route path="/Vanson" element={<Vanson />} />
+                  <Route path="/Vanya" element={<CeasarCipher />} />
                   <Route path="/Alex" element={<Alex />} />
                 </Routes>
            
