@@ -46,9 +46,6 @@ function App() {
               <img src={logo} className={`App-logo ${startAnimation ? 'fade-in' : ''}`} alt="Logo" />
               <nav>
                 <NavLink to="/idkLol">uhhhhh</NavLink>
-                <NavLink to="/idkLol">uhhhhh</NavLink>
-                
-                <NavLink to="/Vanya">Vanya</NavLink>
                 <NavLink to="/Vanson">Vanson</NavLink>
                 <NavLink to="/Shawn">Shawn</NavLink>
                 <NavLink to="/Web">Web</NavLink>
