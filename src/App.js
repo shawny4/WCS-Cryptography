@@ -3,13 +3,13 @@ import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 
 import LoadingScreen from './LoadingScreen'; // Ensure this component is correctly implemented
 import Home from './Home'; // Your Home component
-import Duck from './Duck'; // Other components
+// Other components
 import Shawn from './Pages/Shawn';
 import Vanson from './Pages/Vanson';
 import Web from './Pages/Web';
 import Alex from './Pages/Alex';
-import CeasarCipher from './crypto';
-import Dominik from './Pages/Dom';
+import CeasarCipher from './Pages/crypto';
+import Dominik from './Pages/Dominik';
 import Sanvid from './Pages/Sanvid';
 import Mollo from './Pages/Mollo';
 

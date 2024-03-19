@@ -75,8 +75,8 @@
 .App-header nav a {
   color: white;
   text-decoration: none;
-  margin: 0 20px; /* Increase margin for larger gaps */
-  font-size: 1.5em; /* Increase font size for bigger nav links */
+  margin: 0 10px; /* Increase margin for larger gaps */
+  font-size: 1.4em; /* Increase font size for bigger nav links */
 }
 
 .App-header nav a:hover {

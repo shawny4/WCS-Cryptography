@@ -1,8 +1,8 @@
 
 import { useState, useRef } from 'react';
 import "./Web.css";
-import process from "./Process.png";
-import keyGenProcess from "./Key Gen Process.png";
+import process from "../images/Process.png";
+import keyGenProcess from "../images/Key Gen Process.png";
 
 //simple block chain and number generation program
 
@@ -177,6 +177,7 @@ const BlockChainAndRNG = () => {
     
     return(
         <div className = "web-block-cipher">
+            <h1>Block Cipher & Pseudo Random Number Generator</h1>
             <div className="input-group">
                 {key === "" && <button type="submit" className="encrypt-button" onClick={()=> setKey(randomNumGen(6))}>Generate Key</button>}
 
@@ -248,7 +249,7 @@ const BlockChainAndRNG = () => {
                 > Psuedo Random Number Generator </button>
             </div>}
 
-            {outStr !== "" && <img ref={kGRef} className="info-group" src={keyGenProcess}></img>}
+            {outStr !== "" && <img ref={kGRef} className="info-group" alt="quack" src={keyGenProcess}></img>}
         </div>
     );
 }

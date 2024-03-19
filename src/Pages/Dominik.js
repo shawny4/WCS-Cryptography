@@ -6,6 +6,7 @@ const Dominik =()=>{
 
     return(
         <div>
+            <h1>Mass Caesar</h1>
             <img src={image} alt="duck" className='diagram'/>
 
         </div>

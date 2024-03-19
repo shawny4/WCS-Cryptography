@@ -93,7 +93,7 @@ function streamCipher() {
 
 inputs()
 */
-
+import './Alex.css';
 import React, { useState } from 'react';
 
 function CeasarCipher() {
@@ -168,36 +168,38 @@ function CeasarCipher() {
     };
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className='block-cipher-demo'>
+            <h1>Caesar and Stream Cipher</h1>
+            <form className="input-group"onSubmit={handleSubmit} style={{display:"flow",alignContent:"center"}}>
                 <label>
                     What type of cipher would you like? (c for Caesar Cipher, s for Stream Cipher):
-                    <input type="text" value={choice} onChange={handleChoiceChange} />
+                    <input type="text" className="text-input" value={choice} onChange={handleChoiceChange} />
                 </label>
                 <br />
+                <br/>
                 {choice === 'c' && (
-                    <div>
+                    <div className='text-input'>
                         <label>
                             Enter your message:
-                            <input type="text" value={message} onChange={handleMessageChange} />
+                            <input type="text" className="text-input" value={message} onChange={handleMessageChange} />
                         </label>
                         <br />
                     </div>
                 )}
                 {(choice === 's') && (
-                    <div>
+                    <div className='text-input'>
                         <label>
                             Enter your key (integers):
-                            <input type="text" value={key} onChange={handleKeyChange} />
+                            <input type="text" className="text-input" value={key} onChange={handleKeyChange} />
                         </label>
                         <br />
                     </div>
                 )}
                 {choice === 's' && (
-                    <div>
+                    <div className='text-input'>
                         <label>
                             Enter your plain text:
-                            <input type="text" value={message} onChange={handleMessageChange} />
+                            <input type="text" className="text-input" value={message} onChange={handleMessageChange} />
                         </label>
                         <br />
                     </div>
@@ -205,7 +207,7 @@ function CeasarCipher() {
                 {(choice === 's' || choice === 'c') && <button type="submit" className="encrypt-button">Encrypt</button>}
             </form>
             {encrypted && (
-                <div>
+                <div className="output-encrypted">
                     <label>Encrypted text: {encrypted}</label>
                     <label>Decrypted text: {decrypted}</label>
                 </div>
