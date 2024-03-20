@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 
 import LoadingScreen from './LoadingScreen'; // Ensure this component is correctly implemented
 import Home from './Home'; // Your Home component
-// Other components
+import Duck from './Duck'; // Other components
 import Shawn from './Pages/Shawn';
 import Vanson from './Pages/Vanson';
 import Web from './Pages/Web';
@@ -48,17 +48,16 @@ function App() {
             <header className={`App-header ${startAnimation ? 'fade-in' : ''}`}>
               <img src={logo} className={`App-logo ${startAnimation ? 'fade-in' : ''}`} alt="Logo" />
               <nav>
-                <NavLink to="/">Home</NavLink>
-                <NavLink to="/Alex">Alex</NavLink>
-                <NavLink to="/Dominik">Dominik</NavLink>
-                <NavLink to="/Mollo">Mollo</NavLink>
+           
                 <NavLink to="/Sanvid">Sanvid</NavLink>
+                <NavLink to="/Mollo">Mollo</NavLink>
+                <NavLink to="/Dominik">Dominik</NavLink>
+                <NavLink to="/Vanya">Vanya</NavLink>
+                <NavLink to="/Vanson">Vanson</NavLink>
+                <NavLink to="/Alex">Alex</NavLink>
                 <NavLink to="/Shawn">Shawn</NavLink>
                 <NavLink to="/Web">Web</NavLink>
-                <NavLink to="/Vanya">Vaanya</NavLink>
-                <NavLink to="/Vanson">Vanson</NavLink>
-                
-                
+                <NavLink to="/">Home</NavLink>
               </nav>
             </header>
             <main>
@@ -84,8 +83,9 @@ function App() {
       </div>
     
       
+      
       </BrowserRouter> 
   );
 }
 
-export default App;
+export default App;   
