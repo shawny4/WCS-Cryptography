@@ -127,28 +127,29 @@ function decrypt() {
     // }
 
     // function encrypt(){
-    //     let pt = plaintext.toUpperCase();
-    //     let keyLength = 5;
+    //     let ptt = pt.toUpperCase();
+    //     let key = "thisisakey";
+    //     let keyLength = key.length;
     //     let cipher = "";
     //     let IV = "0";
     //     let block = "";
         
 
-    //     while (pt.length>0){
-    //         if(pt.length>=keyLength){
+    //     while (ptt.length>0){
+    //         if(ptt.length>=keyLength){
     //             //separate the appropriate number of bits from the plaintext.
-    //             block = pt.substring(0,keyLength);
-    //             pt =  pt.substring(keyLength,pt.length);
+    //             block = ptt.substring(0,keyLength);
+    //             ptt =  ptt.substring(keyLength,ptt.length);
 
                 
     //         }else{
-    //             block = pt;
-    //             pt = "";
+    //             block = ptt;
+    //             ptt = "";
     //         }
     //         //XOR the block with the current IV value for extra security
-    //         IV = xor(block,IV,false);
+    //         IV = xor(block,IV);
 
-    //         IV = xor(IV,0,true);
+    //         IV = xor(IV,key);
     //         cipher += IV;
     //     }
 
@@ -165,8 +166,9 @@ function decrypt() {
     // }
 
     // function decrypt(){
-    //     let cipher = cipherText.toUpperCase();
-    //     let keyLength = 5;
+    //     let cipher = ct.toUpperCase();
+    //     let key = "thisisakey";
+    //     let keyLength = key.length;
     //     let block = "";
     //     let IV = "0";
     //     let blockComp = "";
@@ -183,9 +185,9 @@ function decrypt() {
     //             cipher="";
     //         }
             
-    //         blockComp = xor(block,0,true);
+    //         blockComp = xor(block,key);
  
-    //         blockComp = xor(block,IV,false);
+    //         blockComp = xor(block,IV);
     //         IV = block;
     //         rePT += blockComp;
     //     }

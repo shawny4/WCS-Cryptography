@@ -241,7 +241,7 @@ const BlockChainAndRNG = () => {
             
             {outStr !== "" && 
             <div ref={processRef} className="info-group">
-                <img src={process} alt="process"></img>
+                <img className="image" src={process} alt="process"/>
                 <br/><button 
                     type="submit"
                     className="encrypt-button"
