@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './Alex.css';
+import graphImage from '../images/white-text3.png'; // Correct path to the image
+
 
 function simpleEncrypt(text, key) {
   return text.split('').map((char, index) => {
@@ -28,11 +30,18 @@ function generateRandomKey(length) {
 }
 
 function BlockCipherDemo() {
+  const [showGraph, setShowGraph] = useState(false); // New state for showing the graph
   const [text, setText] = useState('');
   const [key, setKey] = useState('');
   const [encrypted, setEncrypted] = useState('');
   const [decrypted, setDecrypted] = useState('');
   const [showDecryption, setShowDecryption] = useState(false);
+
+
+  const handleLearnMore = () => {
+    setShowGraph(true); // Show graph when Learn More is clicked
+  };
+
 
   const handleEncryptWithRandomKey = () => {
     const randomKey = generateRandomKey(16);
@@ -50,6 +59,7 @@ function BlockCipherDemo() {
     setEncrypted('');
     setDecrypted('');
     setShowDecryption(false);
+    setShowGraph(false); // Hide graph when Reset is clicked
   };
 
 
@@ -88,18 +98,25 @@ function BlockCipherDemo() {
             </button>
           </div>
           {decrypted && (
-            <div className="output-group decrypted-group">
-            <label>Decrypted:</label>
-            <textarea
-              className="output-decrypted"
-              value={decrypted}
-              readOnly
-            />
-           
-              <button className="reset-button" onClick={resetFields}>
-                Reset
-              </button>
-            </div>
+              <div className="output-group decrypted-group">
+                <label>Decrypted:</label>
+                <textarea
+                  className="output-decrypted"
+                  value={decrypted}
+                  readOnly
+                />
+                <div className="button-container">
+                  <button className="learn-more-button" onClick={handleLearnMore}>
+                    Info
+                  </button>
+                  <button className="reset-button" onClick={resetFields}>
+                    Reset
+                  </button>
+                </div>
+                {showGraph && (
+                  <img src={graphImage} alt="Cipher Graph" className={`graph-image ${showGraph ? 'fade-in' : 'fade-out'}`} />
+                )}
+             </div>
          
           )}
         </>

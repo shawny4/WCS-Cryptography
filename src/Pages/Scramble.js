@@ -19,12 +19,12 @@ function swapChar(text,setVal){
 
 export function scramble(text,setVal) {
     
-    const numScramble = 1000;
+    const numScramble = 2000;
     
     for(let j=0; j<numScramble; j++){
         //for(let i=0; i<text.length; i++){
             delay(100).then(()=>{
-                setTimeout(swapChar(text,setVal),5); 
+                setTimeout(swapChar(text,setVal),100); 
             });   
         //}   
     }

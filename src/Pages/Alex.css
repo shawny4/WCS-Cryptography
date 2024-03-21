@@ -40,7 +40,7 @@ label {
   text-align: left;
 }
 
-.encrypt-button, .decrypt-button, .reset-button {
+.encrypt-button, .decrypt-button, .reset-button, .learn-more-button {
   background-color: #b136d3;
   color: white;
   border: none;
@@ -69,4 +69,60 @@ textarea.output-decrypted {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+.graph-image {
+  /* Apply styles to position the graph image to the right of the container */
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-46%) ;
+  transition: opacity 1s ease-in-out;
+  opacity: 0; /* start hidden */
+  display: none; /* ensure it doesn't take up space when not shown */
+  width: 100%; /* Full width to start, will resize with container */
+  max-width: 500px; /* Set a max width to contain the size */
+  height: auto; /* Keep the aspect ratio */
+
+}
+
+@media (max-width: 1750px) {
+  .graph-image {
+    width: auto; /* Increase width on very small screens */
+    height: 700px;
+  
+   
+  }
+}
+@media (max-width: 1550px) {
+  .graph-image {
+    width: auto; /* Increase width on very small screens */
+    height: 600px;
+  
+  }
+}
+@media (max-width: 1350px) {
+  .graph-image {
+    width: auto; /* Increase width on very small screens */
+    height: 500px;
+  
+  }
+}
+
+.graph-image.fade-in {
+  opacity: 1;
+  display: block; /* show the image */
+}
+
+.graph-image.fade-out {
+  opacity: 0;
+  display: none; /* hide the image again */
+}
+
+/* Button container to add spacing between buttons */
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Space out buttons */
+  width: 100%; /* Use full width to allow spacing on the sides */
+  max-width: 800px; /* Maximum width of the button container */
+  margin-top: 10px; /* Add some margin on top */
 }

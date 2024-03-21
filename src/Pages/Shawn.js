@@ -8,13 +8,13 @@ import cipher from '../images/Shawn-Cipher.png';
 const BlockCipher = () => {
 
     const [pt, setPt] = useState("");
-    const [ct, setDT] = useState("_______");
-    const [compPT, setCPT] = useState("_______");
+    const [ct, setDT] = useState("______________________________");
+    const [compPT, setCPT] = useState("______________________________");
 
     function reset (){
         setPt("");
-        setDT("_______");
-        setCPT("_______");
+        setDT("______________________________");
+        setCPT("______________________________");
     }
 
     // XOR function
@@ -33,7 +33,7 @@ function xor(str1, str2) {
 // CBC block cipher encryption function
 function encrypt() {
     let plaintext = pt;
-    let iv = "ivalue";
+    let iv = "0";
     let key = "thisiskey123";
     let ciphertext = '';
     let prevBlock = iv;
@@ -62,7 +62,7 @@ function encrypt() {
 
     setDT(pt);
     delay(100).then(()=>{ 
-        scramble(ct,setDT);
+        scramble(pt,setDT);
     });
     delay(1000).then(()=>{ 
         setDT(ciphertext);
@@ -74,7 +74,7 @@ function encrypt() {
 // CBC block cipher decryption function
 function decrypt() {
     let ciphertext = ct;
-    let iv = "ivalue";
+    let iv = "0";
     let key = "thisiskey123";
     let plaintext = '';
     let prevBlock = iv;
@@ -99,7 +99,7 @@ function decrypt() {
     setCPT(ct);
 
     delay(100).then(()=>{ 
-        scramble(compPT,setCPT);
+        scramble(ct,setCPT);
     });
     
     delay(1000).then(()=>{
@@ -127,28 +127,29 @@ function decrypt() {
     // }
 
     // function encrypt(){
-    //     let pt = plaintext.toUpperCase();
-    //     let keyLength = 5;
+    //     let ptt = pt.toUpperCase();
+    //     let key = "thisisakey";
+    //     let keyLength = key.length;
     //     let cipher = "";
     //     let IV = "0";
     //     let block = "";
         
 
-    //     while (pt.length>0){
-    //         if(pt.length>=keyLength){
+    //     while (ptt.length>0){
+    //         if(ptt.length>=keyLength){
     //             //separate the appropriate number of bits from the plaintext.
-    //             block = pt.substring(0,keyLength);
-    //             pt =  pt.substring(keyLength,pt.length);
+    //             block = ptt.substring(0,keyLength);
+    //             ptt =  ptt.substring(keyLength,ptt.length);
 
                 
     //         }else{
-    //             block = pt;
-    //             pt = "";
+    //             block = ptt;
+    //             ptt = "";
     //         }
     //         //XOR the block with the current IV value for extra security
-    //         IV = xor(block,IV,false);
+    //         IV = xor(block,IV);
 
-    //         IV = xor(IV,0,true);
+    //         IV = xor(IV,key);
     //         cipher += IV;
     //     }
 
@@ -165,8 +166,9 @@ function decrypt() {
     // }
 
     // function decrypt(){
-    //     let cipher = cipherText.toUpperCase();
-    //     let keyLength = 5;
+    //     let cipher = ct.toUpperCase();
+    //     let key = "thisisakey";
+    //     let keyLength = key.length;
     //     let block = "";
     //     let IV = "0";
     //     let blockComp = "";
@@ -183,9 +185,9 @@ function decrypt() {
     //             cipher="";
     //         }
             
-    //         blockComp = xor(block,0,true);
+    //         blockComp = xor(block,key);
  
-    //         blockComp = xor(block,IV,false);
+    //         blockComp = xor(block,IV);
     //         IV = block;
     //         rePT += blockComp;
     //     }
@@ -221,32 +223,43 @@ function decrypt() {
 
             
             <label className='output-group'>{/*Holds Returned Cipher Text*/}
-                <text>Computed Ciphertext:</text>
+                <text>Computed Ciphertext:                </text>
                 <text class = "returned-text">{ct} <br/></text>
-                <button className='decrypt-button'id="decrypt" onClick={()=>decrypt()}>Decrypt</button>
+                {ct!=="______________________________"&&
+                <button className='decrypt-button'id="decrypt" onClick={()=>decrypt()}>Decrypt</button>}
             </label>
             
             {compPT !=="" &&
             <label className='output-group' >
-                <text>Decrypted Plaintext:</text>
+                <text>Decrypted Plaintext:                </text>
                 <text class = "returned-text">{compPT} <br/></text>
             </label>}
-            <div style={{height:"100px"}}/>
+            <div style={{height:"200px"}}/>
 
             <p className='info'>
                 Basic CBC system (Cypher Block Chaining) <br/><br/>
-                A normal block cipher consists of several operations where each block takes a portion of the input plaintext equal to the length of the key… 
-                explanation of a normal block cipher…
-                In this implementation however, an extra step is added where the ciphertext of the previous block is used as an extra layer of security…<br/><br/>
+                A normal block cipher consists divides the input plaintext into portions equal to a specified size (usually in increments
+                of 32 bits), then performs 'the same' operation on each of them to produce a cipher text. 
+
+                For a CBC cypher, an 'intial value' is utilized as a secondary key to provide an extra layer of security.<br/>
+                This operation is done before the key is used, and each block uses the cipher text generated by the previous block 
+                as the initial value.<br/><br/>
                 Advantages:<br/>
                 -   Allow a small key to encrypt texts much larger than it.<br/>
                 -	Relatively easy to implement.<br/>
                 -	Relatively more secure as multiple computations are required to decrypt.<br/><br/>
 
                 Disadvantages:<br/>
-                -	Each block is sequential (requires input from the previous block), so computation time for longer plaintexts may take longer.<br/>
-                Current implementation: Encryption and decryption is done using the simplest method; the XOR operation. Converts any character: letters, 
-                or numbers into binary, then comparing the bits to each other before recompiling them, resulting in a different character.
+                -	Each block is sequential (requires input from the previous block), so computation time for longer plaintexts may take longer.<br/><br/>
+
+                In the current implementation, encryption and decryption is done using the simplest method; the XOR operation. Converts any character: letters, 
+                or numbers into binary, then comparing the bits to each other before recompiling them, resulting in a different character.<br/><br/>
+
+                In practice, encryption algorithms such as AES are used.
+
+                Additionally, when the length of the plaintext is not long enough, a padding scheme such as PKCS#7 are generally used to 'fill in'
+                the plaintext with secure, extra characters. Padding in this program is simply appending spaces to the plaintext. 
+
             </p>
 
         </div>
